@@ -37,7 +37,7 @@ At its core, VibeCodeSeed is a single Markdown file, `seed.md`. This file contai
 ## How to Use VibeCodeSeed
 
 1.  **Get the Seed:**
-    * Clone this repository: `git clone https://github.com/your-username/VibeCodeSeed.git YourNewProjectName`
+    * Clone this repository: `git clone https://github.com/your-username/VibeCodeSeed.git YourNewProjectName` (Replace `your-username` with your actual GitHub username)
     * Or, simply copy the `seed.md` file into the root directory of your new project.
 
 2.  **(Optional) Prepare Your Own Outline:**
@@ -66,7 +66,7 @@ At its core, VibeCodeSeed is a single Markdown file, `seed.md`. This file contai
 
 ## Understanding `seed.md`
 
-The `seed.md` file orchestrates the initial project setup through a few key phases:
+The `seed.md` file orchestrates the initial project setup through a few key phases (as detailed within `seed.md` itself):
 
 * **Phase 1: Project Definition & Outline Creation:** Determines if a `project_outline.md` exists. If not, it guides the AI to ask foundational questions to create one. If it exists, the AI analyzes it and asks clarifying questions. It then helps create a `PHASE_1_ACTION_PLAN.md`.
 * **Phase 2: Initialize Task Management System:** Guides the AI to create the `CURRENT_TASK.md` file, populating it with the very first task from the action plan.
@@ -85,6 +85,35 @@ This is the heart of the VibeCodeSeed methodology for ongoing development:
 
 This keeps interactions fresh, focused, and cost-effective.
 
+## Fine-Tuning Your AI Assistant (e.g., Cline) for VibeCodeSeed
+
+While `VibeCodeSeed` provides the workflow structure, you can often enhance the performance and experience by configuring your AI assistant. If you're using a tool like Cline, consider exploring its settings for:
+
+* **Custom Instructions:**
+    * **For Planning Mode:** When Cline is processing `seed.md`, `PROJECT_OUTLINE.md`, or suggesting next steps for `CURRENT_TASK.md`, you could set custom instructions that encourage it to:
+        * "Think step-by-step and be very methodical in planning."
+        * "Prioritize creating clear, actionable, and modular tasks."
+        * "When generating plans or outlines, refer extensively to any provided context documents like `PROJECT_OUTLINE.md`."
+        * "Ensure all necessary files (like `PROJECT_OUTLINE.md`, `PHASE_1_ACTION_PLAN.md`, `CURRENT_TASK.md`) are explicitly mentioned if they need to be created or updated."
+    * **For Acting Mode:** When Cline is working on the "Specific Instructions" within `CURRENT_TASK.md` (e.g., writing code, generating commands), custom instructions could be:
+        * "Adhere strictly to the coding standards and best practices discussed (if any)."
+        * "Provide concise summaries of actions taken."
+        * "Before writing files, confirm the file path and structure."
+
+* **Different Models for Plan vs. Act Modes:**
+    * **Planning:** You might configure Cline to use a more powerful and capable LLM (e.g., GPT-4 series, Claude 3 series, or a large local model) during planning phases. This can lead to better quality outlines, more insightful questions, and more robust strategic suggestions.
+    * **Acting:** For more routine execution of well-defined tasks from `CURRENT_TASK.md` (like generating a boilerplate function or a simple script), you might use a faster, more cost-effective LLM, or one specifically fine-tuned for coding tasks.
+
+* **Context Management Awareness:**
+    * While `VibeCodeSeed`'s `CURRENT_TASK.md` approach is designed to help manage context externally, be aware of your AI assistant's own context length limitations and any internal tools it offers for managing conversation history or summarizing previous interactions if needed.
+
+**Important:**
+* The specific ways to set custom instructions or assign different models for planning/acting modes are **tool-dependent**.
+* **Always refer to the official documentation for your chosen AI assistant (e.g., Cline's documentation) for the most accurate and up-to-date configuration instructions.**
+* Experiment with these settings to find what works best for your projects and the LLMs you have access to.
+
+By thoughtfully configuring your AI assistant, you can make the `VibeCodeSeed` workflow even smoother and more powerful.
+
 ## Customization
 
 Feel free to modify `seed.md` to better suit your personal workflow or the types of projects you typically work on. You can change the initial questions, the structure of the generated outlines, or the information included in `CURRENT_TASK.md`.
@@ -95,7 +124,7 @@ Feedback, suggestions, and contributions are welcome! Please feel free to open a
 
 ## License
 
-This project is licensed under the MIT License - see the `LICENSE` file for details (You'll need to add a `LICENSE` file with the MIT license text if you choose this).
+This project is licensed under the MIT License - see the `LICENSE` file for details (You'll need to add a `LICENSE` file with the MIT license text if you choose this). Consider creating one on GitHub or copying the text from [opensource.org/licenses/MIT](https://opensource.org/licenses/MIT).
 
 ---
 
